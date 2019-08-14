@@ -1,0 +1,10 @@
+{
+  "search.exclude": {
+    ".sourcemaps": true,
+    "**/platforms": true,
+    "**/plugins": true,
+    // "**/www": true,
+    "**/www/lib/": true,
+    "dist": true
+  }
+}

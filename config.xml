@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="dularion.streama" version="0.3.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Streama</name>
-    <description>Connect to Streama backend and enjoy</description>
-    <author email="dularion@gmail.com" href="http://dularion.com/">Antonia Engfors (dularion)</author>
+    <name>CornHub</name>
+    <description>Enjoy your movie while traveling</description>
+    <author email="support@bookmebus.com" href="https://bookmebus.com/">support@bookmebus.com</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
@@ -95,6 +95,6 @@
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
     <allow-navigation href="http://192.168.1.103:8100" />
-    <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="6.3.0" />
+    <engine name="ios" spec="4.5.5" />
 </widget>
