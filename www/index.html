@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
 
     <!-- un-comment this code to enable service worker
     <script>
@@ -16,20 +16,20 @@
       }
     </script>-->
 
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet" />
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="lib/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet">
-    <link href="lib/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet">
-    <link href="lib/toastr/toastr.min.css" rel="stylesheet">
-    <link href="lib/alertify/themes/alertify.core.css" rel="stylesheet">
-    <link href="lib/alertify/themes/alertify.bootstrap3.css" rel="stylesheet">
-    <link href="lib/angularjs-slider/dist/rzslider.css" rel="stylesheet">
-    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="lib/streama-video-player/dist/streama-video-player.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet" />
+    <link href="lib/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" />
+    <link href="lib/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" />
+    <link href="lib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="lib/alertify/themes/alertify.core.css" rel="stylesheet" />
+    <link href="lib/alertify/themes/alertify.bootstrap3.css" rel="stylesheet" />
+    <link href="lib/angularjs-slider/dist/rzslider.css" rel="stylesheet" />
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="lib/streama-video-player/dist/streama-video-player.css" rel="stylesheet" />
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/streama.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/streama.css" rel="stylesheet" />
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -92,6 +92,8 @@
     <script src="js/player/services/player.service.js"></script>
     <script src="js/player/services/websocket.service.js"></script>
 
+    <script src="js/authentication/login.module.js"></script>
+    <script src="js/authentication/login.controller.js"></script>
   </head>
 
   <body ng-app="streama" class="streama-main" ng-class="{'is-child': $root.selectedProfile.isChild}">

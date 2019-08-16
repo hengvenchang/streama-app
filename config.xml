@@ -6,12 +6,13 @@
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -94,7 +95,7 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
-    <allow-navigation href="http://192.168.1.103:8100" />
+    <allow-navigation href="http://192.168.1.77:8080" />
     <engine name="android" spec="6.3.0" />
     <engine name="ios" spec="4.5.5" />
 </widget>

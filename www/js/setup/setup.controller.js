@@ -66,7 +66,7 @@ angular
             $ionicLoading.hide();
             vm.setup.domain = domain;
             apiService.setup.saveDomain(domain);
-            Anonymouslogin();
+            login();
           }
         },
         function(err) {
@@ -80,30 +80,27 @@ angular
       );
     }
 
-    function Anonymouslogin() {
+    function login() {
       $ionicLoading.show({ template: 'Logging in... <br><br> <ion-spinner></ion-spinner>' });
       var payload = {
-        username: 'cheang',
-        password: 'cheang',
+        username: 'guest',
+        password: 'guest123',
         'remember-me': true
       };
-      console.log('payload', payload);
 
       apiService.core.login(payload).then(afterLogin, onLoginErr);
 
       function afterLogin() {
         apiService.core.currentUser().then(function(response) {
-          console.log('response', response);
+          $ionicLoading.hide();
           console.log('%c currentUser data', JSON.stringify(response.data));
           if (!response.data.id) {
-            $ionicLoading.hide();
             $ionicPopup.alert({
               title: 'Login failed',
               template: 'You did not login successfully using the above credentials. Please try again.'
             });
             return;
           }
-          $ionicLoading.hide();
           $state.go('main.dash');
         });
       }

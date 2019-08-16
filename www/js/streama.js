@@ -18,7 +18,8 @@ angular
     'streama.dash',
     'streama.translations',
     'streama.player',
-    'streama.videoPlayer'
+    'streama.videoPlayer',
+    'streama.login'
   ])
 
   .config(function($ionicCloudProvider, $httpProvider) {

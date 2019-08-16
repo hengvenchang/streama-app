@@ -16,7 +16,6 @@ angular.module('streama.core').service('apiService', function($http, localStorag
         return $http({
           method: 'POST',
           url: basePath + 'login/authenticate',
-          // url: basePath + 'api/v1/validateDomain',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'X-Requested-With': 'XMLHttpRequest' },
           transformRequest: _.objectToParams,
           data: data
@@ -24,10 +23,11 @@ angular.module('streama.core').service('apiService', function($http, localStorag
       },
       logout: function() {
         var deferred = $q.defer();
-        $http.post(basePath + 'logoff').then(onLogoff, onLogoff);
+        $http.post(basePath + 'logoff').then(onLogoff);
 
         function onLogoff() {
           $http.get(basePath + apiBase + 'currentUser').then(function(data) {
+            console.log('log', data);
             if (!_.get(data, 'id')) {
               deferred.resolve();
             }
@@ -89,7 +89,6 @@ angular.module('streama.core').service('apiService', function($http, localStorag
         return $http.get(basePath + apiBase + 'dash/markAsCompleted', { params: params });
       },
       listGenres: function(params) {
-        console.log('listGenres', params);
         if (!genres) {
           return $http.get(basePath + apiBase + 'dash/listGenres', { params: params });
         } else {

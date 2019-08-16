@@ -41,7 +41,7 @@
 
     function logout() {
       apiService.core.logout().then(function() {
-        $state.go('setup');
+        $state.go('login');
       });
     }
 

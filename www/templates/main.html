@@ -50,7 +50,11 @@
         <div class="item item-divider">
           Account
         </div>
-        <ion-item menu-close ng-click="$root.logout()"> <i class="ion-power"></i> Login </ion-item>
+        <ion-item menu-close ng-click="$root.logout()">
+          <i class="ion-power"></i>
+          <span ng-if="mainVm.profiles.length < 1 || mainVm.profileName != 'guest'">Login</span>
+          <span ng-if="mainVm.profiles.length > 0">Logout</span>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

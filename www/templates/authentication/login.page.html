@@ -1,0 +1,55 @@
+<ion-content scroll="false" class="setup-page">
+  
+    <ion-slide-page class="setup-slide-content">
+      <div class="streama-header">
+        <img src="img/logo.png" alt="streama" class="header-logo" />
+      </div>
+      <h2 ng-if="!vm.isAlreadySetUp">
+        <i ng-click="vm.proceedToSlide(1)" class="ion-chevron-left"></i>&nbsp; Login
+      </h2>
+
+      <div class="setup-slide-content-push">
+
+          <form class="list" ng-submit="vm.login()">
+            <label class="item item-input">
+              <i class="icon ion-ios-person placeholder-icon"></i>
+              <input
+                name="username"
+                type="text"
+                placeholder="Username"
+                ng-model="vm.setup.username"
+                ng-keypress="($event.charCode==13)? vm.login() : return"
+              />
+            </label>
+            <label class="item item-input">
+              <i class="icon ion-key placeholder-icon"></i>
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                ng-model="vm.setup.password"
+                ng-keypress="($event.charCode==13)? vm.login() : return"
+              />
+            </label>
+
+            <button style="display: none;" type="button" ng-click="vm.login()">Submit</button>
+          </form>
+        </div>
+
+        <div class="setup-help help-domain" ng-if="vm.helpForDomain">
+          <h4><i class="ion-ios-help-outline"></i> Help</h4>
+          <p>
+            You need to enter a URL to a Streama installation. Upon proceeding, the app will validate and authorize
+            itself against that installation.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center setup-foot setup-login-foot">
+        <button ng-click="vm.login()" class="button button-dark button-full">
+          Login
+        </button>
+      </div>
+    </ion-slide-page>
+  </ion-slides>
+</ion-content>

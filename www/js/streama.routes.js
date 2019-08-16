@@ -24,7 +24,6 @@ angular.module('streama').config(function($stateProvider, $urlRouterProvider) {
         genres: function(apiService) {
           return apiService.dash.listGenres().then(
             function(response) {
-              console.log('response', response);
               return response.data;
             },
             function() {
@@ -40,7 +39,6 @@ angular.module('streama').config(function($stateProvider, $urlRouterProvider) {
       controller: 'SetupCtrl as vm',
       templateUrl: 'templates/setup/setup.page.html',
       resolve: {
-        setDomain: setDomain,
         currentUser: currentUserReject
       }
     })
@@ -106,6 +104,13 @@ angular.module('streama').config(function($stateProvider, $urlRouterProvider) {
       cache: false,
       templateUrl: 'templates/player/player.page.html',
       controller: 'PlayerCtrl as vm'
+    })
+
+    .state('login', {
+      url: '/login',
+      cache: false,
+      templateUrl: 'templates/authentication/login.page.html',
+      controller: 'LoginCtrl as vm'
     });
 
   $urlRouterProvider.otherwise('/setup');
@@ -151,33 +156,7 @@ function currentUserReject(apiService, $state) {
 
 function getProfiles(apiService) {
   return apiService.profile.getUserProfiles().then(function(resp) {
+    console.log('resp.data', resp.data);
     return resp.data;
   });
-}
-
-function setDomain(apiService, $ionicLoading, $ionicPopup) {
-  // var domain = 'http://localhost:8080/';
-  // $ionicLoading.show({
-  //   template: 'Validating Domain... <br><br> <ion-spinner></ion-spinner>'
-  // });
-  // apiService.setup.validateDomain(domain).then(
-  //   function(response) {
-  //     console.log('reponse', response);
-  //     if (response.data.accessGranted) {
-  //       $ionicLoading.hide();
-  //       vm.slider.slideTo(2);
-  //       vm.setup.domain = domain;
-  //       apiService.setup.saveDomain(domain);
-  //     }
-  //   },
-  //   function(err) {
-  //     console.log('error', err);
-  //     $ionicLoading.hide();
-  //     var alertPopup = $ionicPopup.alert({
-  //       title: 'Oops...',
-  //       template:
-  //         'Something seems to be wrong. Make sure you entered the right domain and that the server is up & running!'
-  //     });
-  //   }
-  // );
 }
